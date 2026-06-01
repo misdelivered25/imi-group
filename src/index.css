@@ -61,13 +61,23 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv11","ss01","ss03";
+    letter-spacing: -0.005em;
     background-image:
       radial-gradient(circle at 20% 10%, hsl(224 85% 30% / 0.18), transparent 40%),
       radial-gradient(circle at 85% 90%, hsl(42 78% 50% / 0.08), transparent 40%);
     background-attachment: fixed;
   }
-  h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.02em; }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Sora', 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    line-height: 1.08;
+  }
+  h4, h5, h6 { font-weight: 600; line-height: 1.2; }
+  p { line-height: 1.65; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
 }
 
 @layer components {
