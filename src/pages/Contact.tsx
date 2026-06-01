@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Mail, MessageCircle, Instagram, Facebook, Globe, Send } from "lucide-react";
+import { Mail, MessageCircle, Instagram, Facebook, Globe, Send, ArrowRight, FileText } from "lucide-react";
 import { toast } from "sonner";
+import { CTAButton, CTALink } from "@/components/ui-bits/CTAButton";
 
 export default function Contact() {
   const [tab, setTab] = useState<"contact" | "quote">("contact");
@@ -16,18 +17,18 @@ export default function Contact() {
             <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-gold" /> HGCPrivateLimited@gmail.com</div>
             <div className="flex items-center gap-3"><Globe className="h-4 w-4 text-gold" /> www.imitechnologies.co.zw</div>
             <div className="flex items-center gap-4 pt-2">
-              <a href="https://instagram.com" className="hover:text-gold"><Instagram className="h-5 w-5" /></a>
-              <a href="https://facebook.com" className="hover:text-gold"><Facebook className="h-5 w-5" /></a>
+              <a href="https://instagram.com" aria-label="Instagram" className="hover:text-gold transition-smooth"><Instagram className="h-5 w-5" /></a>
+              <a href="https://facebook.com" aria-label="Facebook" className="hover:text-gold transition-smooth"><Facebook className="h-5 w-5" /></a>
             </div>
           </div>
-          <a href="https://wa.me/263785693657" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600 text-white"><MessageCircle className="mr-2 h-4 w-4" /> Chat on WhatsApp</a>
+          <CTALink href="https://wa.me/263785693657" target="_blank" variant="whatsapp" iconLeft={<MessageCircle className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Chat on WhatsApp</CTALink>
         </div>
 
         <div className="lg:col-span-3">
           <div className="glass rounded-3xl p-8">
             <div className="flex gap-2 mb-6">
-              <button onClick={()=>setTab("contact")} className={`px-4 py-2 rounded-full text-sm ${tab==="contact"?"bg-gold text-background":"border border-border text-muted-foreground"}`}>Contact</button>
-              <button onClick={()=>setTab("quote")} className={`px-4 py-2 rounded-full text-sm ${tab==="quote"?"bg-gold text-background":"border border-border text-muted-foreground"}`}>Request Quote</button>
+              <button onClick={()=>setTab("contact")} aria-pressed={tab==="contact"} className={`px-4 py-2 rounded-full text-sm transition-smooth ${tab==="contact"?"bg-gold text-background":"border border-border text-muted-foreground hover:border-gold/40"}`}>Contact</button>
+              <button onClick={()=>setTab("quote")} aria-pressed={tab==="quote"} className={`px-4 py-2 rounded-full text-sm transition-smooth ${tab==="quote"?"bg-gold text-background":"border border-border text-muted-foreground hover:border-gold/40"}`}>Request Quote</button>
             </div>
             <form onSubmit={(e)=>{e.preventDefault(); toast.success("Message sent. We'll respond within 24 hours.");}} className="grid sm:grid-cols-2 gap-4">
               <Input label="Full name" required />
@@ -42,9 +43,11 @@ export default function Contact() {
                 <Label>Message</Label>
                 <textarea required rows={5} className="mt-1 w-full bg-input/60 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-gold" />
               </div>
-              <button type="submit" className="sm:col-span-2 inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-semibold animate-pulse-glow">
-                <Send className="mr-2 h-4 w-4" /> Send {tab === "quote" ? "quote request" : "message"}
-              </button>
+              <div className="sm:col-span-2">
+                <CTAButton type="submit" variant="primary" size="lg" iconLeft={tab === "quote" ? <FileText className="h-4 w-4" /> : <Send className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>
+                  Send {tab === "quote" ? "quote request" : "message"}
+                </CTAButton>
+              </div>
             </form>
           </div>
         </div>

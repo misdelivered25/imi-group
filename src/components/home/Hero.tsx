@@ -1,6 +1,6 @@
 import heroBg from "@/assets/hero-bg.jpg";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Briefcase, Play } from "lucide-react";
+import { CTALink } from "@/components/ui-bits/CTAButton";
 
 export default function Hero() {
   return (
@@ -11,7 +11,6 @@ export default function Hero() {
         <div className="absolute inset-0 grid-pattern opacity-40" />
       </div>
 
-      {/* particles */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 22 }).map((_, i) => (
           <span
@@ -33,19 +32,15 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-gold text-xs uppercase tracking-[0.25em] text-gold animate-fade-up">
             <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" /> Inquire · Motivate · Inspire
           </div>
-          <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-7xl leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Building <span className="text-gradient-gold">Digital Solutions</span> for Africa's<br className="hidden md:block" /> <span className="text-gradient-blue">Next Generation</span> of Businesses
           </h1>
           <p className="mt-6 text-base md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
             IMI Technologies builds websites, brands, media systems, AI strategies, apps and business automation tools for African businesses and organizations ready to grow.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Link to="/book" className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-semibold animate-pulse-glow">
-              Book a Consultation <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link to="/portfolio" className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-gold/40 text-gold hover:bg-gold/10 transition-smooth">
-              View Portfolio
-            </Link>
+            <CTALink to="/book" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
+            <CTALink to="/portfolio" variant="outline" size="lg" iconLeft={<Briefcase className="h-4 w-4" />} iconRight={<Play className="h-3 w-3" />}>View Portfolio</CTALink>
           </div>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">

@@ -1,6 +1,27 @@
-import { CreditCard, FileText, Upload, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { CreditCard, FileText, Upload, CheckCircle2, ArrowRight } from "lucide-react";
+import InfoModal from "@/components/ui-bits/InfoModal";
+import CardGraphic from "@/components/ui-bits/CardGraphic";
+import { CTAButton, CTALink } from "@/components/ui-bits/CTAButton";
+
+type Key = "pay" | "invoice" | "upload" | "status" | null;
+
+const cards = [
+  { key: "pay", icon: CreditCard, title: "Package Payment", desc: "Pay for a selected service package securely. Card and mobile money supported.", cta: "Pay now", variant: "primary" as const, graphic: "circuit" as const },
+  { key: "invoice", icon: FileText, title: "Invoice Request", desc: "Need an invoice for your finance team? Request one and we'll dispatch within 24 hours.", cta: "Request invoice", variant: "outline" as const, graphic: "grid" as const },
+  { key: "upload", icon: Upload, title: "Proof of Payment", desc: "Upload your receipt and our team will reconcile and confirm.", cta: "Upload proof", variant: "gold" as const, graphic: "nodes" as const },
+  { key: "status", icon: CheckCircle2, title: "Payment Status", desc: "Track the status of your active and recent payments.", cta: "View status", variant: "outline" as const, graphic: "wave" as const },
+];
+
+const modalContent: Record<Exclude<Key, null>, { eyebrow: string; title: string; body: React.ReactNode }> = {
+  pay: { eyebrow: "Secure checkout", title: "Package Payment", body: <p>Secure payment checkout is coming soon. Card, mobile money and bank transfer will be supported. Meanwhile, contact us to receive an invoice or pay-link.</p> },
+  invoice: { eyebrow: "Finance", title: "Invoice Request", body: <p>Send us your billing details on the contact page and we'll dispatch a formal invoice within 24 hours.</p> },
+  upload: { eyebrow: "Reconciliation", title: "Proof of Payment", body: <p>Upload your receipt via the drop zone. Our finance team reviews and confirms within one business day.</p> },
+  status: { eyebrow: "Tracking", title: "Payment Status", body: <p>Live status tracking will activate once Lovable Cloud is connected. For now, contact us for any invoice status updates.</p> },
+};
 
 export default function Payments() {
+  const [active, setActive] = useState<Key>(null);
   return (
     <section className="section">
       <div className="container-tight">
@@ -9,38 +30,36 @@ export default function Payments() {
         <p className="mt-3 text-muted-foreground max-w-2xl">Pay for packages, request invoices, upload proof of payment and track confirmation status.</p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-5">
-          <div className="glass-gold rounded-2xl p-7">
-            <CreditCard className="h-7 w-7 text-gold" />
-            <h3 className="mt-4 font-display text-xl">Package Payment</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Pay for a selected service package securely. Card and mobile money supported.</p>
-            <button className="mt-5 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground text-sm font-semibold">Pay now</button>
-          </div>
-          <div className="glass rounded-2xl p-7">
-            <FileText className="h-7 w-7 text-gold" />
-            <h3 className="mt-4 font-display text-xl">Invoice Request</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Need an invoice for your finance team? Request one and we'll dispatch within 24 hours.</p>
-            <button className="mt-5 px-5 py-2.5 rounded-full border border-gold/40 text-gold text-sm">Request invoice</button>
-          </div>
-          <div className="glass rounded-2xl p-7">
-            <Upload className="h-7 w-7 text-gold" />
-            <h3 className="mt-4 font-display text-xl">Proof of Payment</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Upload your receipt and our team will reconcile and confirm.</p>
-            <div className="mt-5 border-2 border-dashed border-border rounded-xl p-6 text-center text-sm text-muted-foreground">
-              Drag a file here or <span className="text-gold underline cursor-pointer">browse</span>
-            </div>
-          </div>
-          <div className="glass-gold rounded-2xl p-7">
-            <CheckCircle2 className="h-7 w-7 text-gold" />
-            <h3 className="mt-4 font-display text-xl">Payment Status</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Track the status of your active and recent payments.</p>
-            <div className="mt-5 space-y-2 text-sm">
-              <div className="flex justify-between border-b border-border/60 pb-2"><span>INV-2025-018</span><span className="text-emerald-400">Confirmed</span></div>
-              <div className="flex justify-between border-b border-border/60 pb-2"><span>INV-2025-019</span><span className="text-gold">Pending</span></div>
-              <div className="flex justify-between"><span>INV-2025-020</span><span className="text-muted-foreground">Draft</span></div>
-            </div>
+          {cards.map(c => (
+            <button key={c.key} onClick={() => setActive(c.key as Key)} aria-label={c.title} className="card-click glass-gold rounded-2xl p-7 text-left block relative overflow-hidden">
+              <CardGraphic variant={c.graphic} />
+              <div className="relative">
+                <c.icon className="h-7 w-7 text-gold" />
+                <h3 className="mt-4 font-display text-xl">{c.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                <div className="mt-5 inline-flex items-center gap-2 text-sm text-gold">{c.cta} <ArrowRight className="h-3 w-3 btn-icon" /></div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-10 glass rounded-2xl p-7">
+          <h3 className="font-display text-lg">Recent invoices</h3>
+          <div className="mt-5 space-y-2 text-sm">
+            <div className="flex justify-between border-b border-border/60 pb-2"><span>INV-2025-018</span><span className="text-emerald-400">Confirmed</span></div>
+            <div className="flex justify-between border-b border-border/60 pb-2"><span>INV-2025-019</span><span className="text-gold">Pending</span></div>
+            <div className="flex justify-between"><span>INV-2025-020</span><span className="text-muted-foreground">Draft</span></div>
           </div>
         </div>
       </div>
+
+      <InfoModal open={!!active} onOpenChange={(v) => !v && setActive(null)} eyebrow={active ? modalContent[active].eyebrow : ""} title={active ? modalContent[active].title : ""}>
+        {active && modalContent[active].body}
+        <div className="flex gap-3 pt-3">
+          <CTALink to="/contact" variant="primary" size="sm" iconRight={<ArrowRight className="h-4 w-4" />}>Contact finance</CTALink>
+          <CTAButton onClick={() => setActive(null)} variant="outline" size="sm">Close</CTAButton>
+        </div>
+      </InfoModal>
     </section>
   );
 }

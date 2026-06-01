@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -50,8 +50,8 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link to="/book" className="hidden md:inline-flex items-center px-4 py-2 text-sm rounded-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-medium animate-pulse-glow">
-            Book Consultation
+          <Link to="/book" aria-label="Book a consultation" className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-medium animate-pulse-glow hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-smooth">
+            <Calendar className="h-4 w-4" /> Book Consultation
           </Link>
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X /> : <Menu />}
