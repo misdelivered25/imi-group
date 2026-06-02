@@ -17,6 +17,15 @@ import Contact from "./pages/Contact.tsx";
 import Book from "./pages/Book.tsx";
 import Admin from "./pages/Admin.tsx";
 import Payments from "./pages/Payments.tsx";
+import Gallery from "./pages/Gallery.tsx";
+import GalleryDetail from "./pages/GalleryDetail.tsx";
+import Albums from "./pages/Albums.tsx";
+import Categories from "./pages/Categories.tsx";
+import MediaLibrary from "./pages/MediaLibrary.tsx";
+import Upload from "./pages/Upload.tsx";
+import AdminGallery from "./pages/AdminGallery.tsx";
+import ClientPreview from "./pages/ClientPreview.tsx";
+import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
