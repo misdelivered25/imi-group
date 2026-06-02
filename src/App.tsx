@@ -52,6 +52,17 @@ const App = () => (
             <Route path="/book" element={<Book />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/payments" element={<Payments />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery/:slug" element={<GalleryDetail />} />
+            <Route path="/albums" element={<Albums />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/projects-gallery" element={<Gallery />} />
+            <Route path="/media-library" element={<MediaLibrary />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/admin/gallery" element={<AdminGallery />} />
+            <Route path="/client-preview/:token" element={<ClientPreview />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/book-consultation" element={<Book />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
