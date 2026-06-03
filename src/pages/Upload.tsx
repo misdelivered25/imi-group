@@ -19,11 +19,13 @@ type Pending = { file: File; preview: string; title: string; caption: string; ta
 export default function Upload() {
   const { user, isStaff, loading } = useAuth();
   const nav = useNavigate();
+  const [params] = useSearchParams();
+  const presetGallery = params.get("gallery") ?? "";
   const [files, setFiles] = useState<Pending[]>([]);
   const [galleries, setGalleries] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
   const [albums, setAlbums] = useState<any[]>([]);
-  const [galleryId, setGalleryId] = useState<string>("");
+  const [galleryId, setGalleryId] = useState<string>(presetGallery);
   const [albumId, setAlbumId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [newGallery, setNewGallery] = useState("");
@@ -32,13 +34,16 @@ export default function Upload() {
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    if (!loading && !user) nav("/auth?redirect=/upload");
-  }, [user, loading, nav]);
+    if (!loading && !user) nav("/auth?redirect=/upload" + (presetGallery ? `?gallery=${presetGallery}` : ""));
+  }, [user, loading, nav, presetGallery]);
 
   useEffect(() => {
     supabase.from("galleries").select("*").order("created_at", { ascending: false }).then(({data}) => setGalleries(data ?? []));
     supabase.from("categories").select("*").order("name").then(({data}) => setCategories(data ?? []));
   }, []);
+
+  useEffect(() => { if (presetGallery) setGalleryId(presetGallery); }, [presetGallery]);
+
 
   useEffect(() => {
     if (galleryId) supabase.from("albums").select("*").eq("gallery_id", galleryId).then(({data}) => setAlbums(data ?? []));
