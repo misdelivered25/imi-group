@@ -1,3 +1,4 @@
+import PageSEO from "@/components/PageSEO";
 import { SectionHeader } from "@/components/ui-bits/Section";
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import CardGraphic from "@/components/ui-bits/CardGraphic";
