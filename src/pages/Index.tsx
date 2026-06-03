@@ -1,3 +1,4 @@
+import PageSEO from "@/components/PageSEO";
 import { Link } from "react-router-dom";
 import Hero from "@/components/home/Hero";
 import { SectionHeader } from "@/components/ui-bits/Section";
