@@ -81,7 +81,7 @@ export default function Home() {
                   <h3 className="mt-4 font-display text-xl">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
                   <div className="reveal-panel mt-4 flex items-center text-xs text-gold">
-                    Learn more <ArrowRight className="ml-1 h-3 w-3" />
+                    Explore {s.title} <ArrowRight className="ml-1 h-3 w-3" />
                   </div>
                 </div>
               </Link>
@@ -211,7 +211,7 @@ export default function Home() {
                   <div className="text-xs text-gold uppercase tracking-wider">{p.category}</div>
                   <h3 className="font-display text-xl mt-2">{p.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{p.excerpt}</p>
-                  <div className="text-xs text-gold mt-4 flex items-center">Read more <ArrowRight className="ml-1 h-3 w-3 btn-icon" /></div>
+                  <div className="text-xs text-gold mt-4 flex items-center">Read {p.title} insights <ArrowRight className="ml-1 h-3 w-3 btn-icon" /></div>
                 </div>
               </Link>
             ))}

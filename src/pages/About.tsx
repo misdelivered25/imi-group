@@ -29,7 +29,7 @@ export default function About() {
             <div key={b.t} className="glass-gold rounded-2xl p-7 relative overflow-hidden">
               <CardGraphic variant={b.g} />
               <div className="relative">
-                <h3 className="font-display text-2xl text-gradient-gold">{b.t}</h3>
+                <h2 className="font-display text-2xl text-gradient-gold">{b.t}</h2>
                 <p className="mt-3 text-muted-foreground">{b.d}</p>
               </div>
             </div>
