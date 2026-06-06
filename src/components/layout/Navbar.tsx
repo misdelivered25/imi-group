@@ -23,16 +23,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 glass border-b border-border/60">
       <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative h-9 w-9 rounded-lg bg-gradient-to-br from-primary to-primary-glow grid place-items-center font-display font-bold text-primary-foreground text-lg shadow-[0_0_20px_hsl(var(--primary)/0.5)]">
-            <span>I</span>
-            <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-gold animate-pulse" />
-          </div>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={imiLogo.url} alt="IMI Technologies logo" className="h-11 w-11 md:h-12 md:w-12 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)]" />
           <div className="leading-tight">
             <div className="font-display text-base md:text-lg font-bold tracking-tight">IMI <span className="text-gradient-gold">Technologies</span></div>
             <div className="text-[10px] md:text-[11px] text-muted-foreground uppercase tracking-[0.2em]">Inquire · Motivate · Inspire</div>
           </div>
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
