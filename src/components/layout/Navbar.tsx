@@ -2,6 +2,8 @@ import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import imiLogo from "@/assets/imi-logo.png.asset.json";
+
 
 const links = [
   { to: "/", label: "Home" },
