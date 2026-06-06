@@ -8,9 +8,13 @@ export default function Footer() {
     <footer className="mt-20 border-t border-border/60 bg-card/40 backdrop-blur">
       <div className="container mx-auto px-4 py-16 grid md:grid-cols-4 gap-10">
         <div>
-          <div className="font-display text-xl font-bold">IMI <span className="text-gradient-gold">Technologies</span></div>
+          <div className="flex items-center gap-3">
+            <img src={imiLogo.url} alt="IMI Technologies logo" className="h-12 w-12 object-contain" />
+            <div className="font-display text-xl font-bold">IMI <span className="text-gradient-gold">Technologies</span></div>
+          </div>
           <p className="mt-3 text-sm text-muted-foreground">Inquire. Motivate. Inspire.</p>
           <p className="mt-4 text-sm text-muted-foreground">Premium African technology company building websites, apps, AI, branding and media.</p>
+
         </div>
         <div>
           <h4 className="text-sm font-semibold text-gold uppercase tracking-wider">Quick Links</h4>
