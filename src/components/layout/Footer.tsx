@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, MessageCircle, Instagram, Facebook, Globe } from "lucide-react";
+import imiLogo from "@/assets/imi-logo.png.asset.json";
+
 
 export default function Footer() {
   return (
