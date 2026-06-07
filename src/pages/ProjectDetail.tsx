@@ -53,7 +53,7 @@ export default function ProjectDetail() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
-          <CTALink to="/book" variant="primary" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Discuss a similar project</CTALink>
+          <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Discuss a similar project</CTALink>
           <CTALink href="https://wa.me/263785693657" target="_blank" variant="whatsapp" iconLeft={<MessageCircle className="h-4 w-4" />}>Chat on WhatsApp</CTALink>
         </div>
       </div>

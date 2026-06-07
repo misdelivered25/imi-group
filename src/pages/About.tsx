@@ -87,7 +87,7 @@ export default function About() {
             <h2 className="font-display text-3xl md:text-4xl">Where we're <span className="text-gradient-gold">headed</span>.</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">A pan-African footprint, deeper AI products for local industries, and a partner ecosystem that helps African founders compete globally.</p>
             <div className="mt-8">
-              <CTALink to="/book" variant="primary" size="lg" iconLeft={<Handshake className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Partner with us</CTALink>
+              <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="lg" iconLeft={<Handshake className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Partner with us</CTALink>
             </div>
           </div>
         </div>

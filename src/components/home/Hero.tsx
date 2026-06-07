@@ -39,7 +39,7 @@ export default function Hero() {
             IMI Technologies builds websites, brands, media systems, AI strategies, apps and business automation tools for African businesses and organizations ready to grow.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <CTALink to="/book" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
+            <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
             <CTALink to="/portfolio" variant="outline" size="lg" iconLeft={<Briefcase className="h-4 w-4" />} iconRight={<Play className="h-3 w-3" />}>View Portfolio</CTALink>
           </div>
 

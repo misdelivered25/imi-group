@@ -16,9 +16,11 @@ export default function Pricing() {
               <h3 className="font-display text-2xl md:text-3xl">{service}</h3>
               <div className="mt-6 grid md:grid-cols-4 gap-5">
                 {tiers.map((t, i) => (
-                  <Link
+                  <a
                     key={t.tier}
-                    to={`/book?package=${encodeURIComponent(service)}&tier=${encodeURIComponent(t.tier)}`}
+                    href={`https://wa.me/263785693657?text=${encodeURIComponent(`Hi IMI Technologies, I'm interested in the ${t.tier} tier of ${service}.`)}`}
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label={`Book ${t.tier} ${service}`}
                     className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}
                   >
@@ -34,7 +36,7 @@ export default function Pricing() {
                         <Calendar className="h-4 w-4" /> Get started <ArrowRight className="h-3 w-3 btn-icon" />
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>

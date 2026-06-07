@@ -70,7 +70,7 @@ export default function Admin() {
           </div>
           <div className="hidden md:flex gap-2">
             <CTALink to="/payments" variant="outline" size="sm" iconLeft={<CreditCard className="h-4 w-4" />}>Payments</CTALink>
-            <CTALink to="/book" variant="primary" size="sm" iconLeft={<Calendar className="h-4 w-4" />}>New booking</CTALink>
+            <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="sm" iconLeft={<Calendar className="h-4 w-4" />}>New booking</CTALink>
           </div>
         </div>
 
