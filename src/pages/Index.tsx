@@ -162,7 +162,7 @@ export default function Home() {
           <SectionHeader eyebrow="Pricing preview" title={<>Premium packages, <span className="text-gradient-gold">honest pricing.</span></>} />
           <div className="mt-10 grid md:grid-cols-4 gap-5">
             {packages["Website Development"].map((p, i) => (
-              <Link to={`/book?package=Website+Development&tier=${encodeURIComponent(p.tier)}`} key={p.tier} aria-label={`${p.tier} package`} className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}>
+              <a href={`https://wa.me/263785693657?text=${encodeURIComponent(`Hi IMI Technologies, I'm interested in the ${p.tier} tier of Website Development.`)}`} target="_blank" rel="noreferrer" key={p.tier} aria-label={`${p.tier} package`} className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}>
                 {i === 2 && <span className="absolute top-3 right-3 text-[9px] font-bold px-2 py-1 rounded-full bg-gold text-background uppercase tracking-wider">Popular</span>}
                 <div className="text-xs uppercase tracking-wider text-gold">{p.tier}</div>
                 <div className="font-display text-2xl mt-2">{p.price}</div>
