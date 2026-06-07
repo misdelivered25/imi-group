@@ -41,11 +41,17 @@ export default function GallerySubNav() {
           ))}
         </div>
         <div className="hidden md:flex gap-1">
-          {returnLinks.map((l) => (
-            <NavLink key={l.to} to={l.to} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] text-muted-foreground hover:text-gold">
-              <l.icon className="h-3 w-3" /> {l.label}
-            </NavLink>
-          ))}
+          {returnLinks.map((l) =>
+            l.external ? (
+              <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] text-muted-foreground hover:text-gold">
+                <l.icon className="h-3 w-3" /> {l.label}
+              </a>
+            ) : (
+              <NavLink key={l.to} to={l.to} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] text-muted-foreground hover:text-gold">
+                <l.icon className="h-3 w-3" /> {l.label}
+              </NavLink>
+            )
+          )}
         </div>
       </div>
     </div>
