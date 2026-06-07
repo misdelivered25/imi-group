@@ -36,7 +36,7 @@ export default function Pricing() {
                         <Calendar className="h-4 w-4" /> Get started <ArrowRight className="h-3 w-3 btn-icon" />
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
