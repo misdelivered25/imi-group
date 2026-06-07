@@ -229,7 +229,7 @@ export default function Home() {
               <h2 className="font-display text-3xl md:text-5xl">Let's build something <span className="text-gradient-gold">unforgettable</span>.</h2>
               <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Book a free consultation and walk away with a clear next step — whether you work with us or not.</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <CTALink to="/book" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
+                <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
                 <CTALink href="https://wa.me/263785693657" target="_blank" variant="whatsapp" size="lg" iconLeft={<MessageCircle className="h-4 w-4" />}>WhatsApp Us</CTALink>
               </div>
             </div>
