@@ -75,7 +75,7 @@ export default function GalleryDetail() {
         <div className="mt-12 glass border border-gold/30 rounded-2xl p-8 text-center">
           <h3 className="font-display text-2xl">Want similar work?</h3>
           <div className="flex flex-wrap gap-3 justify-center mt-4">
-            <Button asChild className="bg-gradient-to-r from-primary to-primary-glow"><Link to="/book">Book Similar Work</Link></Button>
+            <Button asChild className="bg-gradient-to-r from-primary to-primary-glow"><a href="https://wa.me/263785693657" target="_blank" rel="noreferrer">Book Similar Work</a></Button>
             <Button asChild variant="outline" className="border-gold/60 text-gold"><Link to="/contact">Request Quote</Link></Button>
           </div>
         </div>

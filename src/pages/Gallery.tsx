@@ -131,7 +131,7 @@ export default function Gallery() {
           <h3 className="font-display text-3xl">Like this work? Book IMI Technologies for your next project.</h3>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">From branding to AI systems, our team helps you Inquire, Motivate, and Inspire.</p>
           <div className="flex flex-wrap gap-3 justify-center mt-6">
-            <Button asChild className="bg-gradient-to-r from-primary to-primary-glow"><Link to="/book">Book a Consultation</Link></Button>
+            <Button asChild className="bg-gradient-to-r from-primary to-primary-glow"><a href="https://wa.me/263785693657" target="_blank" rel="noreferrer">Book a Consultation</a></Button>
             <Button asChild variant="outline" className="border-gold/60 text-gold"><Link to="/contact">Contact IMI</Link></Button>
           </div>
         </div>
