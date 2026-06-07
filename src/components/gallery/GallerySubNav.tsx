@@ -14,7 +14,7 @@ const items = [
 const returnLinks = [
   { to: "/", label: "Home", icon: Home },
   { to: "/services", label: "Services", icon: Briefcase },
-  { to: "/book", label: "Book Consultation", icon: Calendar },
+  { href: "https://wa.me/263785693657", label: "Book Consultation", icon: Calendar, external: true },
 ];
 
 export default function GallerySubNav() {
