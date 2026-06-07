@@ -170,7 +170,7 @@ export default function Home() {
                   {p.features.map((f) => <li key={f} className="flex gap-2"><Check className="h-4 w-4 text-gold shrink-0" />{f}</li>)}
                 </ul>
                 <div className="reveal-panel mt-4 text-xs text-gold inline-flex items-center gap-1">Book this <ArrowRight className="h-3 w-3" /></div>
-              </Link>
+              </a>
             ))}
           </div>
           <div className="text-center mt-8">
