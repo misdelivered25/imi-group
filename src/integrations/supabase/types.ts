@@ -419,12 +419,26 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      client_preview_can_access: {
+        Args: { p_media_item_id: string; p_token: string }
+        Returns: boolean
+      }
+      get_client_preview: { Args: { p_token: string }; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
         }
         Returns: boolean
+      }
+      insert_client_comment: {
+        Args: {
+          p_comment: string
+          p_media_item_id: string
+          p_token: string
+          p_user_name: string
+        }
+        Returns: string
       }
     }
     Enums: {
