@@ -4,40 +4,56 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
-import { getSignedUrl } from "@/lib/gallery";
 import { toast } from "sonner";
 import { ShieldCheck, Download, ArrowLeft } from "lucide-react";
 
 export default function ClientPreview() {
   const { token } = useParams();
+  const [state, setState] = useState<"loading" | "invalid" | "expired" | "ok">("loading");
   const [link, setLink] = useState<any>(null);
   const [gallery, setGallery] = useState<any>(null);
   const [media, setMedia] = useState<any[]>([]);
-  const [urls, setUrls] = useState<Record<string,string>>({});
+  const [urls, setUrls] = useState<Record<string, string>>({});
   const [name, setName] = useState(""); const [text, setText] = useState("");
 
   useEffect(() => {
     (async () => {
-      const { data: l } = await supabase.from("client_preview_links").select("*").eq("access_token", token).maybeSingle();
-      setLink(l);
-      if (l) {
-        const { data: g } = await supabase.from("galleries").select("*").eq("id", l.gallery_id).maybeSingle();
-        setGallery(g);
-        const { data: m } = await supabase.from("media_items").select("*").eq("gallery_id", l.gallery_id).order("created_at", { ascending:false });
-        setMedia(m ?? []);
-        const map: Record<string,string> = {};
-        for (const it of m ?? []) { const u = await getSignedUrl(it.file_url); if (u) map[it.id] = u; }
-        setUrls(map);
+      if (!token) { setState("invalid"); return; }
+      const { data, error } = await supabase.rpc("get_client_preview", { p_token: token });
+      if (error || !data) { setState("invalid"); return; }
+      if ((data as any).expired) { setState("expired"); return; }
+      const payload = data as any;
+      setLink(payload.link);
+      setGallery(payload.gallery);
+      setMedia(payload.media ?? []);
+      setState("ok");
+
+      const paths = (payload.media ?? []).map((m: any) => m.file_url).filter(Boolean);
+      if (paths.length) {
+        const { data: signed } = await supabase.functions.invoke("client-preview-url", {
+          body: { token, paths },
+        });
+        if (signed?.urls) {
+          const map: Record<string, string> = {};
+          for (const m of payload.media) if (signed.urls[m.file_url]) map[m.id] = signed.urls[m.file_url];
+          setUrls(map);
+        }
       }
     })();
   }, [token]);
 
-  if (!link) return <div className="container mx-auto px-4 py-24 text-center"><h1 className="font-display text-3xl">Invalid or expired preview link</h1><Button asChild className="mt-4"><Link to="/">Return to IMI</Link></Button></div>;
-  if (link.expires_at && new Date(link.expires_at) < new Date()) return <div className="container mx-auto px-4 py-24 text-center"><h1 className="font-display text-3xl">This preview has expired</h1></div>;
+  if (state === "loading") return <div className="container mx-auto px-4 py-24 text-center text-muted-foreground">Loading…</div>;
+  if (state === "invalid") return <div className="container mx-auto px-4 py-24 text-center"><h1 className="font-display text-3xl">Invalid or expired preview link</h1><Button asChild className="mt-4"><Link to="/">Return to IMI</Link></Button></div>;
+  if (state === "expired") return <div className="container mx-auto px-4 py-24 text-center"><h1 className="font-display text-3xl">This preview has expired</h1></div>;
 
   const submitComment = async () => {
-    if (!text.trim()) return;
-    const { error } = await supabase.from("comments").insert({ media_item_id: media[0]?.id, user_name: name || link.client_name, comment: text });
+    if (!text.trim() || !media[0]) return;
+    const { error } = await supabase.rpc("insert_client_comment", {
+      p_token: token!,
+      p_media_item_id: media[0].id,
+      p_user_name: name || link.client_name,
+      p_comment: text,
+    });
     if (error) toast.error(error.message); else { toast.success("Comment sent"); setText(""); }
   };
 
@@ -57,8 +73,8 @@ export default function ClientPreview() {
           <div className="columns-2 md:columns-3 gap-4 mt-8">
             {media.map(m => (
               <div key={m.id} className="mb-4 rounded-xl overflow-hidden border border-border/60">
-                {m.file_type === "video" ? <video src={urls[m.id]} controls className="w-full"/> : <img src={urls[m.id]} alt={m.title??""} className="w-full"/>}
-                {link.download_allowed && m.download_allowed && (
+                {m.file_type === "video" ? <video src={urls[m.id]} controls className="w-full"/> : <img src={urls[m.id]} alt={m.title ?? ""} className="w-full"/>}
+                {link.download_allowed && m.download_allowed && urls[m.id] && (
                   <a href={urls[m.id]} download className="block text-center py-2 text-xs text-gold hover:bg-gold/10"><Download className="h-3 w-3 inline mr-1"/>Download</a>
                 )}
               </div>
