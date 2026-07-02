@@ -56,6 +56,10 @@ const seoMap: Record<string, { title: string; description: string }> = {
     title: "Book — IMI Technologies",
     description: "Book a free consultation with IMI Technologies. No obligation. We'll respond within 24 hours.",
   },
+  "/booking-confirmation": {
+    title: "Booking Confirmation — IMI Technologies",
+    description: "Review your IMI Technologies consultation request and send it via WhatsApp.",
+  },
   "/admin": {
     title: "Admin — IMI Technologies",
     description: "IMI Technologies admin dashboard. Manage leads, bookings, payments, portfolio and analytics.",

@@ -15,6 +15,7 @@ import Testimonials from "./pages/Testimonials.tsx";
 import Insights from "./pages/Insights.tsx";
 import Contact from "./pages/Contact.tsx";
 import Book from "./pages/Book.tsx";
+import BookingConfirmation from "./pages/BookingConfirmation.tsx";
 import Admin from "./pages/Admin.tsx";
 import Payments from "./pages/Payments.tsx";
 import Gallery from "./pages/Gallery.tsx";
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/blog" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<Book />} />
+            <Route path="/booking-confirmation" element={<BookingConfirmation />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/payments" element={<Payments />} />
             <Route path="/gallery" element={<Gallery />} />
