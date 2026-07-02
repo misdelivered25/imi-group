@@ -162,7 +162,7 @@ export default function Home() {
           <SectionHeader eyebrow="Pricing preview" title={<>Premium packages, <span className="text-gradient-gold">honest pricing.</span></>} />
           <div className="mt-10 grid md:grid-cols-4 gap-5">
             {packages["Website Development"].map((p, i) => (
-              <a href={`https://wa.me/263785693657?text=${encodeURIComponent(`Hi IMI Technologies, I'm interested in the ${p.tier} tier of Website Development.`)}`} target="_blank" rel="noreferrer" key={p.tier} aria-label={`${p.tier} package`} className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}>
+              <Link to={`/book?package=${encodeURIComponent("Website Development")}&tier=${encodeURIComponent(p.tier)}`} key={p.tier} aria-label={`${p.tier} package`} className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}>
                 {i === 2 && <span className="absolute top-3 right-3 text-[9px] font-bold px-2 py-1 rounded-full bg-gold text-background uppercase tracking-wider">Popular</span>}
                 <div className="text-xs uppercase tracking-wider text-gold">{p.tier}</div>
                 <div className="font-display text-2xl mt-2">{p.price}</div>
@@ -170,7 +170,7 @@ export default function Home() {
                   {p.features.map((f) => <li key={f} className="flex gap-2"><Check className="h-4 w-4 text-gold shrink-0" />{f}</li>)}
                 </ul>
                 <div className="reveal-panel mt-4 text-xs text-gold inline-flex items-center gap-1">Book this <ArrowRight className="h-3 w-3" /></div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -229,7 +229,7 @@ export default function Home() {
               <h2 className="font-display text-3xl md:text-5xl">Let's build something <span className="text-gradient-gold">unforgettable</span>.</h2>
               <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Book a free consultation and walk away with a clear next step — whether you work with us or not.</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
+                <CTALink to="/book" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
                 <CTALink href="https://wa.me/263785693657" target="_blank" variant="whatsapp" size="lg" iconLeft={<MessageCircle className="h-4 w-4" />}>WhatsApp Us</CTALink>
               </div>
             </div>
