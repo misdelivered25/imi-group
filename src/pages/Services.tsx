@@ -47,7 +47,7 @@ export default function Services() {
                 </div>
                 <div className="sm:col-span-2 flex flex-wrap gap-3 pt-2">
                   <CTALink to="/pricing" variant="outline" size="sm" iconLeft={<FileText className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>View packages</CTALink>
-                  <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="sm" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
+                  <CTALink to={`/book?service=${encodeURIComponent(s.title)}`} variant="primary" size="sm" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>
                 </div>
               </div>
             </div>
