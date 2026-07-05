@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-16 grid md:grid-cols-4 gap-10">
         <div>
           <div className="flex items-center gap-3">
-            <img src={imiLogo.url} alt="IMI Technologies logo" className="h-12 w-12 object-contain" />
+            <img src={imiLogo.url} alt="IMI Group logo" className="h-12 w-12 object-contain" />
             <div className="font-display text-xl font-bold">IMI <span className="text-gradient-gold">Technologies</span></div>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">Inquire. Motivate. Inspire.</p>
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} IMI Technologies. Built in Africa for the world.
+        © {new Date().getFullYear()} IMI Group. Built in Africa for the world.
       </div>
     </footer>
   );

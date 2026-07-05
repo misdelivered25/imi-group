@@ -23,7 +23,7 @@ function useBookingData() {
 }
 
 function buildWhatsAppMessage(data: ReturnType<typeof useBookingData>) {
-  const lines = ["Hi IMI Technologies,"];
+  const lines = ["Hi IMI Group,"];
   const context = [] as string[];
 
   if (data.name) context.push(`My name is ${data.name}.`);
@@ -39,7 +39,7 @@ function buildWhatsAppMessage(data: ReturnType<typeof useBookingData>) {
   if (data.notes) context.push(`Notes: ${data.notes}`);
 
   if (context.length === 0) {
-    return "Hi IMI Technologies, I'd like to book a consultation.";
+    return "Hi IMI Group, I'd like to book a consultation.";
   }
 
   return [...lines, "", ...context].join("\n");

@@ -99,7 +99,7 @@ export default function Auth() {
         </Tabs>
 
         <div className="text-center text-xs text-muted-foreground mt-6">
-          <Link to="/" className="hover:text-gold">← Back to IMI Technologies</Link>
+          <Link to="/" className="hover:text-gold">← Back to IMI Group</Link>
         </div>
       </div>
     </div>

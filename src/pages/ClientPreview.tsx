@@ -62,7 +62,7 @@ export default function ClientPreview() {
       <div className="border-b border-gold/30 bg-card/50 backdrop-blur">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2 text-xs"><ShieldCheck className="h-4 w-4 text-gold"/><span className="text-muted-foreground">Private client preview for</span> <b>{link.client_name || "client"}</b></div>
-          <Link to="/" className="text-xs text-muted-foreground hover:text-gold inline-flex items-center gap-1"><ArrowLeft className="h-3 w-3"/>Return to IMI Technologies</Link>
+          <Link to="/" className="text-xs text-muted-foreground hover:text-gold inline-flex items-center gap-1"><ArrowLeft className="h-3 w-3"/>Return to IMI Group</Link>
         </div>
       </div>
       <section className="container mx-auto px-4 py-10">

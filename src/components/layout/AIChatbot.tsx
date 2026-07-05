@@ -30,7 +30,7 @@ export default function AIChatbot() {
             <Sparkles className="h-4 w-4 text-gold" />
             <div>
               <div className="text-sm font-semibold">IMI AI Assistant</div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Powered by IMI Technologies</div>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Powered by IMI Group</div>
             </div>
           </div>
           <div className="p-4 h-72 overflow-y-auto space-y-3">

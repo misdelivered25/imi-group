@@ -13,7 +13,7 @@ export default function About() {
     <>
       <section className="section">
         <div className="container-tight text-center">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold">About IMI Technologies</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold">About IMI Group</div>
           <h1 className="mt-4 font-display text-4xl md:text-6xl">A new generation of <span className="text-gradient-gold">African technology</span>.</h1>
           <p className="mt-6 text-muted-foreground md:text-lg">We build the digital backbone of African businesses, organizations and ideas — from first idea to investor-ready execution.</p>
         </div>
@@ -42,7 +42,7 @@ export default function About() {
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-gold">Our Story</div>
             <h2 className="mt-3 font-display text-3xl md:text-4xl">From a single idea to a <span className="text-gradient-blue">multi-division group</span>.</h2>
-            <p className="mt-5 text-muted-foreground">IMI Technologies was founded with a clear belief: that African businesses deserve the same caliber of design, technology and strategy as the best companies in the world. We started by helping student founders and small businesses go digital — and grew into a three-division group serving brands across the continent.</p>
+            <p className="mt-5 text-muted-foreground">IMI Group was founded with a clear belief: that African businesses deserve the same caliber of design, technology and strategy as the best companies in the world. We started by helping student founders and small businesses go digital — and grew into a three-division group serving brands across the continent.</p>
             <p className="mt-4 text-muted-foreground">Today, IMI ships websites, apps, AI strategies, branding, and media for clients ranging from churches and NGOs to startups and corporate teams.</p>
           </div>
           <div className="relative">
@@ -52,7 +52,7 @@ export default function About() {
               <div className="relative h-full flex flex-col justify-end">
                 <div className="text-xs uppercase tracking-[0.3em] text-gold">Founder</div>
                 <div className="font-display text-3xl mt-2">Miguel Hore</div>
-                <div className="text-sm text-muted-foreground mt-1">Founder & Chief Executive · IMI Technologies</div>
+                <div className="text-sm text-muted-foreground mt-1">Founder & Chief Executive · IMI Group</div>
               </div>
             </div>
           </div>
