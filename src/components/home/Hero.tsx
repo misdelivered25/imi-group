@@ -36,7 +36,7 @@ export default function Hero() {
             Building <span className="text-gradient-gold">Digital Solutions</span> for Africa's<br className="hidden md:block" /> <span className="text-gradient-blue">Next Generation</span> of Businesses
           </h1>
           <p className="mt-6 text-base md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            IMI Technologies builds websites, brands, media systems, AI strategies, apps and business automation tools for African businesses and organizations ready to grow.
+            IMI Group builds websites, brands, media systems, AI strategies, apps and business automation tools for African businesses and organizations ready to grow.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <CTALink to="/book" variant="primary" size="lg" iconLeft={<Calendar className="h-4 w-4" />} iconRight={<ArrowRight className="h-4 w-4" />}>Book a Consultation</CTALink>

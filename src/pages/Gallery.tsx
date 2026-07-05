@@ -59,7 +59,7 @@ export default function Gallery() {
           <div className="flex flex-wrap gap-3 mt-8">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary-glow"><Link to="/media-library"><Images className="h-4 w-4 mr-2"/>Open Gallery</Link></Button>
             <Button asChild size="lg" variant="outline" className="border-gold/60 text-gold hover:bg-gold/10"><Link to="/upload"><Upload className="h-4 w-4 mr-2"/>Upload Media</Link></Button>
-            <Button asChild size="lg" variant="ghost"><Link to="/"><ArrowRight className="h-4 w-4 mr-2 rotate-180"/>Back to IMI Technologies</Link></Button>
+            <Button asChild size="lg" variant="ghost"><Link to="/"><ArrowRight className="h-4 w-4 mr-2 rotate-180"/>Back to IMI Group</Link></Button>
           </div>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function Gallery() {
       {/* CTA */}
       <section className="container mx-auto px-4 py-16">
         <div className="glass border border-gold/30 rounded-3xl p-10 text-center">
-          <h3 className="font-display text-3xl">Like this work? Book IMI Technologies for your next project.</h3>
+          <h3 className="font-display text-3xl">Like this work? Book IMI Group for your next project.</h3>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">From branding to AI systems, our team helps you Inquire, Motivate, and Inspire.</p>
           <div className="flex flex-wrap gap-3 justify-center mt-6">
             <Button asChild className="bg-gradient-to-r from-primary to-primary-glow"><Link to="/book">Book a Consultation</Link></Button>
