@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components/ui-bits/Section";
+import miguelPhoto from "@/assets/miguel-hore.png.asset.json";
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import CardGraphic from "@/components/ui-bits/CardGraphic";
 import { divisions } from "@/data/site";
@@ -46,10 +47,10 @@ export default function About() {
             <p className="mt-4 text-muted-foreground">Today, IMI ships websites, apps, AI strategies, branding, and media for clients ranging from churches and NGOs to startups and corporate teams.</p>
           </div>
           <div className="relative">
-            <div className="aspect-[4/5] glass-gold rounded-3xl p-8 grid-pattern relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-gold/10" />
-              <CardGraphic variant="circuit" />
-              <div className="relative h-full flex flex-col justify-end">
+            <div className="aspect-[4/5] glass-gold rounded-3xl overflow-hidden relative">
+              <img src={miguelPhoto.url} alt="Miguel Hore, Founder & Chief Executive of IMI Group" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              <div className="relative h-full flex flex-col justify-end p-8">
                 <div className="text-xs uppercase tracking-[0.3em] text-gold">Founder</div>
                 <div className="font-display text-3xl mt-2">Miguel Hore</div>
                 <div className="text-sm text-muted-foreground mt-1">Founder & Chief Executive · IMI Group</div>
