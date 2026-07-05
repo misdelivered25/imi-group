@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components/ui-bits/Section";
+import miguelPhoto from "@/assets/miguel-hore.png.asset.json";
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import CardGraphic from "@/components/ui-bits/CardGraphic";
 import { divisions } from "@/data/site";
