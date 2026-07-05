@@ -1,5 +1,9 @@
 import { SectionHeader } from "@/components/ui-bits/Section";
 import miguelPhoto from "@/assets/miguel-hore.png.asset.json";
+import divTech from "@/assets/div-tech.png.asset.json";
+import divDesigns from "@/assets/div-designs.png.asset.json";
+import divMedia from "@/assets/div-media.png.asset.json";
+const divisionImages = [divTech.url, divDesigns.url, divMedia.url];
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import CardGraphic from "@/components/ui-bits/CardGraphic";
 import { divisions } from "@/data/site";
@@ -66,7 +70,8 @@ export default function About() {
           <div className="mt-10 grid md:grid-cols-3 gap-5">
             {divisions.map((d, i) => (
               <Link to="/services" key={d.name} aria-label={d.name} className="card-click glass rounded-2xl p-7 block relative overflow-hidden">
-                <CardGraphic variant={i === 0 ? "circuit" : i === 1 ? "nodes" : "grid"} />
+                <img src={divisionImages[i]} alt={d.name} className="absolute inset-0 w-full h-full object-cover opacity-30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
                 <div className="relative">
                   <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center">
                     <Icon name={d.icon} className="h-6 w-6 text-white" />
