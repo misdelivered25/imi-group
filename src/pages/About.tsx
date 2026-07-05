@@ -1,5 +1,9 @@
 import { SectionHeader } from "@/components/ui-bits/Section";
 import miguelPhoto from "@/assets/miguel-hore.png.asset.json";
+import divTech from "@/assets/div-tech.png.asset.json";
+import divDesigns from "@/assets/div-designs.png.asset.json";
+import divMedia from "@/assets/div-media.png.asset.json";
+const divisionImages = [divTech.url, divDesigns.url, divMedia.url];
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import CardGraphic from "@/components/ui-bits/CardGraphic";
 import { divisions } from "@/data/site";
