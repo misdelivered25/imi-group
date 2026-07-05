@@ -12,3 +12,12 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/gallery
+Disallow: /upload
+Disallow: /media-library
+Disallow: /client-preview/
+Disallow: /auth
+Disallow: /booking-confirmation
+
+Sitemap: https://imi-group.lovable.app/sitemap.xml
