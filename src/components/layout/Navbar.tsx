@@ -24,9 +24,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 glass border-b border-border/60">
       <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={imiLogo.url} alt="IMI Technologies logo" className="h-11 w-11 md:h-12 md:w-12 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)]" />
+          <img src={imiLogo.url} alt="IMI Group logo" className="h-11 w-11 md:h-12 md:w-12 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)]" />
           <div className="leading-tight">
-            <div className="font-display text-base md:text-lg font-bold tracking-tight">IMI <span className="text-gradient-gold">Technologies</span></div>
+            <div className="font-display text-base md:text-lg font-bold tracking-tight">IMI <span className="text-gradient-gold">Group</span></div>
             <div className="text-[10px] md:text-[11px] text-muted-foreground uppercase tracking-[0.2em]">Inquire · Motivate · Inspire</div>
           </div>
         </Link>
