@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export type CarouselSlide = {
   id: string;
@@ -35,7 +36,20 @@ export default function ImageCarousel({
 }: ImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop, align: "start", containScroll: "trimSnaps" });
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const [playing, setPlaying] = useState(() => !reducedMotion);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handleChange = (event: MediaQueryListEvent) => {
+      setReducedMotion(event.matches);
+      if (event.matches) setPlaying(false);
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -71,7 +85,7 @@ export default function ImageCarousel({
                 <img
                   src={slide.image}
                   alt={slide.title ?? "IMI visual"}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[9000ms] ease-out group-hover:scale-[1.05]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[9000ms] ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:transform-none"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
@@ -88,26 +102,32 @@ export default function ImageCarousel({
       </div>
 
       <div className="mt-4 flex items-center gap-3">
-        <button
+        <Button
           type="button"
-          onClick={() => emblaApi?.scrollPrev()}
-          className="h-10 w-10 rounded-full border border-border/70 bg-background/60 grid place-items-center hover:border-gold/60 transition-smooth"
+          variant="outline"
+          size="icon"
+          onClick={() => emblaApi?.scrollPrev(reducedMotion)}
+          className="rounded-full border-border/70 bg-background/60 hover:border-gold/60"
           aria-label="Previous slide"
+          title="Previous slide"
         >
           <ArrowLeft className="h-4 w-4" />
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
-          onClick={() => emblaApi?.scrollNext()}
-          className="h-10 w-10 rounded-full border border-border/70 bg-background/60 grid place-items-center hover:border-gold/60 transition-smooth"
+          variant="outline"
+          size="icon"
+          onClick={() => emblaApi?.scrollNext(reducedMotion)}
+          className="rounded-full border-border/70 bg-background/60 hover:border-gold/60"
           aria-label="Next slide"
+          title="Next slide"
         >
           <ArrowRight className="h-4 w-4" />
-        </button>
+        </Button>
 
         {showProgress && (
           <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden" aria-hidden="true">
-            <div className="h-full rounded-full bg-gradient-to-r from-primary to-gold transition-all duration-500" style={{ width: `${progress}%` }} />
+            <div className="h-full rounded-full bg-gradient-to-r from-primary to-gold transition-all duration-500 motion-reduce:transition-none" style={{ width: `${progress}%` }} />
           </div>
         )}
 
@@ -116,15 +136,18 @@ export default function ImageCarousel({
         </span>
 
         {showPlayPause && slides.length > 1 && (
-          <button
+          <Button
             type="button"
+            variant="outline"
+            size="icon"
             onClick={() => setPlaying((value) => !value)}
-            className="h-10 w-10 rounded-full border border-border/70 bg-background/60 grid place-items-center hover:border-gold/60 transition-smooth"
+            className="rounded-full border-border/70 bg-background/60 hover:border-gold/60"
             aria-label={playing ? "Pause slideshow" : "Play slideshow"}
             aria-pressed={playing}
+            title={playing ? "Pause slideshow" : "Play slideshow"}
           >
             {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-          </button>
+          </Button>
         )}
       </div>
     </div>
