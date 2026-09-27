@@ -13,7 +13,7 @@ import { visualProjects, mediaFeatureImages, PIXIESET_PORTFOLIO } from "@/data/i
 import * as Icons from "lucide-react";
 
 function Icon({ name, className }: { name: string; className?: string }) {
-  const Component = (Icons as Record<string, ElementType>)[name] ?? Sparkles;
+  const Component = (Icons as unknown as Record<string, ElementType>)[name] ?? Sparkles;
   return <Component className={className} />;
 }
 
