@@ -7,7 +7,7 @@ import AIChatbot from "./AIChatbot";
 import { useEffect } from "react";
 import { projects } from "@/data/site";
 
-const SITE_URL = "https://www.imitechnologies.co.zw";
+const SITE_URL = "https://imi-group.lovable.app";
 
 const seoMap: Record<string, { title: string; description: string }> = {
   "/": { title: "IMI Group — Inquire. Motivate. Inspire.", description: "Premium African technology, design and media solutions for ambitious organizations." },
