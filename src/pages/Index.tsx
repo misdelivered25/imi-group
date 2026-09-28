@@ -116,9 +116,9 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-background/30 to-transparent" />
                   </div>
-                  <div className="p-6">
+                  <div className="relative z-10 p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-[0_0_28px_hsl(var(--primary)/0.25)] -mt-14 border border-border/60">
+                      <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-[0_0_28px_hsl(var(--primary)/0.25)] -mt-7 border border-border/60">
                         <Icon name={service.icon} className="h-5 w-5 text-white" />
                       </div>
                       <span className="rounded-full border border-gold/20 bg-gold/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">{service.division.replace("IMI ", "")}</span>
