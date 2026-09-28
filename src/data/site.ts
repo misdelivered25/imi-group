@@ -1,3 +1,10 @@
+import imiCutCeosDinner from "@/assets/imi-cut-ceos-dinner.jpeg.asset.json";
+import imiVelvetBloom from "@/assets/imi-velvet-bloom.jpeg.asset.json";
+import imiCutCeosStore from "@/assets/imi-cut-ceos-store.jpeg.asset.json";
+import imiUebertAngel from "@/assets/imi-uebert-angel.jpeg.asset.json";
+import imiDharaLaunch from "@/assets/imi-dhara-launch.jpeg.asset.json";
+import imiDesignOpen from "@/assets/imi-design-open.jpeg.asset.json";
+
 export const services = [
   { slug: "website-development", title: "Website Development", division: "IMI Technologies", icon: "Globe", short: "Premium websites that convert.", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80", solves: "Lack of credible online presence and conversion-ready websites.", helps: "Businesses, NGOs, churches, schools, startups, political & campus organizations.", deliverables: ["Custom design", "CMS setup", "SEO foundations", "Hosting guidance"] },
   { slug: "graphic-design", title: "Graphic Design", division: "IMI Designs", icon: "Palette", short: "Visuals that command attention.", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80", solves: "Inconsistent visual identity and weak marketing collateral.", helps: "Brands launching products, events, and campaigns.", deliverables: ["Posters", "Flyers", "Social graphics", "Print collateral"] },
