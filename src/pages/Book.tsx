@@ -17,7 +17,7 @@ import { CTALink } from "@/components/ui-bits/CTAButton";
 const interests = [
   "Website / Web app",
   "Mobile app",
-  "Branding & Design",
+  "IMI Design Monthly Packages",
   "Photography / Videography",
   "AI / Automation",
   "Media / Gallery",
