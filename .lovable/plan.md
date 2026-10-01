@@ -17,4 +17,5 @@
 - Remove `/gallery`, `/gallery/:slug`, and `/projects-gallery` from the public route map and remove Gallery SEO entries.
 - Remove Gallery and other gallery-only public URLs from `sitemap.xml`; retain robots exclusions for private media tools.
 - Refactor shared card data to include image references, then consume those references consistently across pages.
-- Verify the public navigation and representative pages at mobile and desktop sizes, and confirm there are no missing images or broken links.
+- Add a clearly separated “Individual Design Services” price list with the eleven supplied services and exact USD prices.
+- Verify the public navigation, representative pages, and pricing at mobile and desktop sizes, and confirm there are no missing images or broken links.
