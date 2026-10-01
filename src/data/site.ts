@@ -71,11 +71,11 @@ export const packages: Record<string, { tier: string; price: string; features: s
     { tier: "Premium", price: "From $1,800", features: ["Custom design", "Advanced SEO", "Integrations"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Custom platform", "Dedicated team", "SLA"] },
   ],
-  "Branding & Design": [
-    { tier: "Starter", price: "From $250", features: ["Logo + basic kit"] },
-    { tier: "Growth", price: "From $600", features: ["Full identity", "Stationery"] },
-    { tier: "Premium", price: "From $1,200", features: ["Brand strategy", "Guidelines book"] },
-    { tier: "Enterprise", price: "Request Quote", features: ["Rebrand program"] },
+  "IMI Design Monthly Packages": [
+    { tier: "Bronze", price: "$30/month", features: ["8 graphic designs", "Social media post designs", "Event posters & flyers", "Basic brand support", "Content posting guidance", "2 revisions per design", "WhatsApp support", "48-hour turnaround"] },
+    { tier: "Silver", price: "$75/month", features: ["20 graphic designs", "Social media graphics", "Posters & flyers", "Event promotion graphics", "Marketing materials", "Brand consistency management", "Content calendar support", "5 revisions per design", "Priority support", "24-48 hour turnaround"] },
+    { tier: "Gold", price: "$150/month", features: ["40 graphic designs", "Social media graphics", "Posters, flyers & banners", "Marketing campaign graphics", "Promotional material", "Business card & certificate designs", "Content strategy support", "Unlimited revisions", "Priority delivery", "Monthly design consultation"] },
+    { tier: "Platinum", price: "$300/month", features: ["Unlimited design requests*", "Full brand management", "Social media & campaign graphics", "Event & product promotion graphics", "Banner, business card & certificate designs", "Brochure designs", "Company profile updates", "Content strategy", "Monthly brand review", "Fastest turnaround"] },
   ],
   "Social Media Management": [
     { tier: "Starter", price: "From $180/mo", features: ["8 posts/mo"] },
