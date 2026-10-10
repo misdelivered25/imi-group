@@ -4,6 +4,9 @@ import imiCutCeosStore from "@/assets/imi-cut-ceos-store.jpeg.asset.json";
 import imiUebertAngel from "@/assets/imi-uebert-angel.jpeg.asset.json";
 import imiDharaLaunch from "@/assets/imi-dhara-launch.jpeg.asset.json";
 import imiDesignOpen from "@/assets/imi-design-open.jpeg.asset.json";
+import developmentPhoto from "@/assets/pricing-development.jpg";
+import strategyPhoto from "@/assets/pricing-strategy.jpg";
+import mediaPhoto from "@/assets/div-media.png.asset.json";
 
 export const services = [
   { slug: "website-development", title: "Website Development", division: "IMI Technologies", icon: "Globe", short: "Premium websites that convert.", image: "/__l5e/assets-v1/8351f195-8284-4ddc-8f32-885bdd9949a6/imi-cut-ceos-store.jpeg", solves: "Lack of credible online presence and conversion-ready websites.", helps: "Businesses, NGOs, churches, schools, startups, political & campus organizations.", deliverables: ["Custom design", "CMS setup", "SEO foundations", "Hosting guidance"] },
@@ -66,7 +69,7 @@ export const testimonials = [
 
 export const packages: Record<string, { tier: string; price: string; features: string[] }[]> = {
   "Website Development": [
-    { tier: "Starter", price: "From $450", features: ["1-3 pages", "Mobile responsive", "Contact form"] },
+    { tier: "Starter", price: "From $59.99", features: ["1-3 pages", "Mobile responsive", "Contact form"] },
     { tier: "Growth", price: "From $950", features: ["Up to 8 pages", "CMS", "Basic SEO", "Analytics"] },
     { tier: "Premium", price: "From $1,800", features: ["Custom design", "Advanced SEO", "Integrations"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Custom platform", "Dedicated team", "SLA"] },
@@ -78,45 +81,71 @@ export const packages: Record<string, { tier: string; price: string; features: s
     { tier: "Platinum", price: "$300/month", features: ["Unlimited design requests*", "Full brand management", "Social media & campaign graphics", "Event & product promotion graphics", "Banner, business card & certificate designs", "Brochure designs", "Company profile updates", "Content strategy", "Monthly brand review", "Fastest turnaround"] },
   ],
   "Social Media Management": [
-    { tier: "Starter", price: "From $180/mo", features: ["8 posts/mo"] },
+    { tier: "Starter", price: "From $24.99/month", features: ["8 posts/mo"] },
     { tier: "Growth", price: "From $380/mo", features: ["16 posts", "Reels", "Engagement"] },
     { tier: "Premium", price: "From $750/mo", features: ["Daily content", "Ads light"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Full team"] },
   ],
   "Photography": [
-    { tier: "Starter", price: "From $120", features: ["1hr shoot"] },
+    { tier: "Starter", price: "From $15/hour", features: ["1hr shoot"] },
     { tier: "Growth", price: "From $300", features: ["Half day"] },
     { tier: "Premium", price: "From $600", features: ["Full day + retouch"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Multi-day campaign"] },
   ],
   "Videography": [
-    { tier: "Starter", price: "From $250", features: ["Short reel"] },
+    { tier: "Starter", price: "From $9.99", features: ["Short reel"] },
     { tier: "Growth", price: "From $700", features: ["Brand video"] },
     { tier: "Premium", price: "From $1,500", features: ["Cinematic film"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Series production"] },
   ],
   "AI Strategy": [
-    { tier: "Starter", price: "From $300", features: ["AI audit"] },
+    { tier: "Starter", price: "From $19.99", features: ["AI audit"] },
     { tier: "Growth", price: "From $900", features: ["Roadmap"] },
     { tier: "Premium", price: "From $2,500", features: ["Implementation plan"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Org-wide AI program"] },
   ],
   "Business Automation": [
-    { tier: "Starter", price: "From $250", features: ["1 workflow"] },
+    { tier: "Starter", price: "From $29.99", features: ["1 workflow"] },
     { tier: "Growth", price: "From $800", features: ["Multi-workflow"] },
     { tier: "Premium", price: "From $2,000", features: ["Full ops suite"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Custom systems"] },
   ],
   "App Development": [
-    { tier: "Starter", price: "From $1,500", features: ["MVP single platform"] },
+    { tier: "Starter", price: "From $39.99", features: ["MVP single platform"] },
     { tier: "Growth", price: "From $4,000", features: ["iOS + Android"] },
     { tier: "Premium", price: "From $9,000", features: ["Full product"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Scale & DevOps"] },
   ],
   "Tech Consulting": [
-    { tier: "Starter", price: "From $150/hr", features: ["Advisory hour"] },
+    { tier: "Starter", price: "From $19.99/hour", features: ["Advisory hour"] },
     { tier: "Growth", price: "From $1,200/mo", features: ["Monthly retainer"] },
     { tier: "Premium", price: "From $3,000/mo", features: ["Fractional CTO"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Board-level"] },
   ],
 };
+
+export const pricingImages: Record<string, { src: string; alt: string }> = {
+  "Website Development": { src: developmentPhoto, alt: "Website and mobile layout on a laptop and phone" },
+  "IMI Design Monthly Packages": { src: imiDesignOpen.url, alt: "IMI Design services artwork" },
+  "Social Media Management": { src: imiCutCeosDinner.url, alt: "IMI social media event campaign artwork" },
+  Photography: { src: imiVelvetBloom.url, alt: "IMI graduation portrait campaign" },
+  Videography: { src: mediaPhoto.url, alt: "Videographer filming with a professional camera" },
+  "AI Strategy": { src: strategyPhoto, alt: "Technology professionals reviewing a strategy and analytics workflow" },
+  "Business Automation": { src: strategyPhoto, alt: "Connected business workflows and reporting charts" },
+  "App Development": { src: developmentPhoto, alt: "Mobile app layout alongside a development laptop" },
+  "Tech Consulting": { src: strategyPhoto, alt: "Collaborative technology consultation" },
+};
+
+export const individualDesignServices = [
+  { title: "Logo Design", price: "$50" },
+  { title: "Flyer Design", price: "$5" },
+  { title: "Poster Design", price: "$5" },
+  { title: "Business Card Design", price: "$20" },
+  { title: "Certificate Design", price: "$15" },
+  { title: "Brochure Design", price: "$40" },
+  { title: "Menu Design", price: "$40" },
+  { title: "Roll-Up Banner Design", price: "$25" },
+  { title: "Company Profile Design", price: "$60" },
+  { title: "Social Media Cover Design", price: "$15" },
+  { title: "Invitation Card Design", price: "$10" },
+];

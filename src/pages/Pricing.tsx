@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { SectionHeader } from "@/components/ui-bits/Section";
 import { CTALink } from "@/components/ui-bits/CTAButton";
-import CardGraphic from "@/components/ui-bits/CardGraphic";
-import { packages } from "@/data/site";
+import { packages, pricingImages, individualDesignServices } from "@/data/site";
 import { Check, Calendar, ArrowRight, MessageCircle } from "lucide-react";
 
 export default function Pricing() {
@@ -13,18 +12,24 @@ export default function Pricing() {
         <div className="mt-14 space-y-14">
           {Object.entries(packages).map(([service, tiers]) => (
             <div key={service}>
-              <h3 className="font-display text-2xl md:text-3xl">{service}</h3>
-              <div className="mt-6 grid md:grid-cols-4 gap-5">
+              <h2 className="font-display text-2xl md:text-3xl">{service}</h2>
+              <div className="mt-6 grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
                 {tiers.map((t, i) => (
                   <Link
                     to={`/book?package=${encodeURIComponent(service)}&tier=${encodeURIComponent(t.tier)}`}
                     key={t.tier}
                     aria-label={`Book ${t.tier} ${service}`}
-                    className={`card-click glass rounded-2xl p-6 block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}
+                    className={`card-click glass rounded-2xl block relative overflow-hidden ${i === 2 ? "border-gradient glow-gold" : ""}`}
                   >
-                    <CardGraphic variant={i === 2 ? "nodes" : "grid"} />
+                    {pricingImages[service] && (
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <img src={pricingImages[service].src} alt={pricingImages[service].alt} loading="lazy" width={1024} height={640} className="h-full w-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                        <span className="absolute bottom-3 left-5 grid h-9 w-9 place-items-center rounded-lg border border-gold/30 bg-background/80 text-gold"><Calendar className="h-4 w-4" /></span>
+                      </div>
+                    )}
                     {i === 2 && <span className="absolute top-3 right-3 text-[9px] font-bold px-2 py-1 rounded-full bg-gold text-background uppercase tracking-wider z-10">Popular</span>}
-                    <div className="relative">
+                    <div className="relative p-6">
                       <div className="text-xs uppercase tracking-wider text-gold">{t.tier}</div>
                       <div className="font-display text-2xl mt-2">{t.price}</div>
                       <ul className="mt-4 space-y-2 text-sm text-muted-foreground min-h-[80px]">
@@ -39,6 +44,22 @@ export default function Pricing() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl">Individual Design Services</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {individualDesignServices.map((item) => (
+              <Link key={item.title} to={`/book?service=${encodeURIComponent(item.title)}`} aria-label={`Book ${item.title} for ${item.price}`} className="card-click glass flex items-center gap-4 rounded-lg p-4 overflow-hidden">
+                <img src={pricingImages["IMI Design Monthly Packages"].src} alt="IMI Design artwork" loading="lazy" width={80} height={80} className="h-20 w-20 shrink-0 rounded-md object-cover" />
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-display text-base">{item.title}</h3>
+                  <p className="mt-1 font-display text-xl text-gold">{item.price}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 shrink-0 text-gold" />
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 text-center flex flex-wrap gap-3 justify-center">

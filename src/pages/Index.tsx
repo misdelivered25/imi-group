@@ -125,6 +125,7 @@ export default function Home() {
                     </div>
                     <h3 className="mt-4 font-display text-xl">{service.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{service.short}</p>
+                     {packages[service.title]?.[0]?.tier === "Starter" && <p className="mt-3 text-sm font-semibold text-gold">{packages[service.title][0].price}</p>}
                     <div className="mt-5 inline-flex items-center text-xs text-gold">Explore <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" /></div>
                   </div>
                 </Link>
