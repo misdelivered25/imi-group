@@ -1,5 +1,6 @@
 # Roadmap
 
+- [ ] Update the eight supplied service starting prices and add relevant Pricing card pictures.
 - [ ] Remove Gallery from the public website while preserving private media administration.
 - [ ] Add relevant imagery to public-facing content cards.
 - [ ] Add the supplied Individual Design Services and prices to the Pricing page.
