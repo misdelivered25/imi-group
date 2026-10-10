@@ -70,8 +70,8 @@ export const testimonials = [
 export const packages: Record<string, { tier: string; price: string; features: string[] }[]> = {
   "Website Development": [
     { tier: "Starter", price: "From $59.99", features: ["1-3 pages", "Mobile responsive", "Contact form"] },
-    { tier: "Growth", price: "From $119.98", features: ["Up to 8 pages", "CMS", "Basic SEO", "Analytics"] },
-    { tier: "Premium", price: "From $179.97", features: ["Custom design", "Advanced SEO", "Integrations"] },
+    { tier: "Growth", price: "From $79.99", features: ["Up to 8 pages", "CMS", "Basic SEO", "Analytics"] },
+    { tier: "Premium", price: "From $99.99", features: ["Custom design", "Advanced SEO", "Integrations"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Custom platform", "Dedicated team", "SLA"] },
   ],
   "IMI Design Monthly Packages": [
@@ -82,8 +82,8 @@ export const packages: Record<string, { tier: string; price: string; features: s
   ],
   "Social Media Management": [
     { tier: "Starter", price: "From $24.99/month", features: ["8 posts/mo"] },
-    { tier: "Growth", price: "From $49.98/month", features: ["16 posts", "Reels", "Engagement"] },
-    { tier: "Premium", price: "From $74.97/month", features: ["Daily content", "Ads light"] },
+    { tier: "Growth", price: "From $39.99/month", features: ["16 posts", "Reels", "Engagement"] },
+    { tier: "Premium", price: "From $69.99/month", features: ["Daily content", "Ads light"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Full team"] },
   ],
   "Photography": [
@@ -94,32 +94,32 @@ export const packages: Record<string, { tier: string; price: string; features: s
   ],
   "Videography": [
     { tier: "Starter", price: "From $9.99", features: ["Short reel"] },
-    { tier: "Growth", price: "From $19.98", features: ["Brand video"] },
-    { tier: "Premium", price: "From $29.97", features: ["Cinematic film"] },
+    { tier: "Growth", price: "From $17.99", features: ["Brand video"] },
+    { tier: "Premium", price: "From $39.99", features: ["Cinematic film"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Series production"] },
   ],
   "AI Strategy": [
     { tier: "Starter", price: "From $19.99", features: ["AI audit"] },
-    { tier: "Growth", price: "From $39.98", features: ["Roadmap"] },
-    { tier: "Premium", price: "From $59.97", features: ["Implementation plan"] },
+    { tier: "Growth", price: "From $34.99", features: ["Roadmap"] },
+    { tier: "Premium", price: "From $54.99", features: ["Implementation plan"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Org-wide AI program"] },
   ],
   "Business Automation": [
     { tier: "Starter", price: "From $29.99", features: ["1 workflow"] },
-    { tier: "Growth", price: "From $59.98", features: ["Multi-workflow"] },
-    { tier: "Premium", price: "From $89.97", features: ["Full ops suite"] },
+    { tier: "Growth", price: "From $59.99", features: ["Multi-workflow"] },
+    { tier: "Premium", price: "From $79.99", features: ["Full ops suite"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Custom systems"] },
   ],
   "App Development": [
     { tier: "Starter", price: "From $39.99", features: ["MVP single platform"] },
-    { tier: "Growth", price: "From $79.98", features: ["iOS + Android"] },
-    { tier: "Premium", price: "From $119.97", features: ["Full product"] },
+    { tier: "Growth", price: "From $59.99", features: ["iOS + Android"] },
+    { tier: "Premium", price: "From $99.99", features: ["Full product"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Scale & DevOps"] },
   ],
   "Tech Consulting": [
     { tier: "Starter", price: "From $19.99/hour", features: ["Advisory hour"] },
-    { tier: "Growth", price: "From $39.98/hour", features: ["Monthly retainer"] },
-    { tier: "Premium", price: "From $59.97/hour", features: ["Fractional CTO"] },
+    { tier: "Growth", price: "From $39.99/hour", features: ["Monthly retainer"] },
+    { tier: "Premium", price: "From $59.99/hour", features: ["Fractional CTO"] },
     { tier: "Enterprise", price: "Request Quote", features: ["Board-level"] },
   ],
 };
@@ -137,15 +137,15 @@ export const pricingImages: Record<string, { src: string; alt: string }> = {
 };
 
 export const individualDesignServices = [
-  { title: "Logo Design", price: "$50" },
-  { title: "Flyer Design", price: "$5" },
-  { title: "Poster Design", price: "$5" },
-  { title: "Business Card Design", price: "$20" },
-  { title: "Certificate Design", price: "$15" },
-  { title: "Brochure Design", price: "$40" },
-  { title: "Menu Design", price: "$40" },
-  { title: "Roll-Up Banner Design", price: "$25" },
-  { title: "Company Profile Design", price: "$60" },
-  { title: "Social Media Cover Design", price: "$15" },
-  { title: "Invitation Card Design", price: "$10" },
+  { title: "Logo Design", price: "From $5" },
+  { title: "Flyer Design", price: "From $5" },
+  { title: "Poster Design", price: "From $5" },
+  { title: "Business Card Design", price: "From $5" },
+  { title: "Certificate Design", price: "From $8" },
+  { title: "Brochure Design", price: "From $15" },
+  { title: "Menu Design", price: "From $8" },
+  { title: "Roll-Up Banner Design", price: "From $10" },
+  { title: "Company Profile Design", price: "From $15" },
+  { title: "Social Media Cover Design", price: "From $15" },
+  { title: "Invitation Card Design", price: "From $5" },
 ];
