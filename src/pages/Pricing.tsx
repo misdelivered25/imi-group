@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ProjectAdvisor from "@/components/home/ProjectAdvisor";
 import { SectionHeader } from "@/components/ui-bits/Section";
 import { CTALink } from "@/components/ui-bits/CTAButton";
 import { packages, pricingImages, individualDesignServices } from "@/data/site";
@@ -6,6 +7,8 @@ import { Check, Calendar, ArrowRight, MessageCircle } from "lucide-react";
 
 export default function Pricing() {
   return (
+    <>
+    <ProjectAdvisor />
     <section className="section">
       <div className="container mx-auto px-4">
         <SectionHeader eyebrow="Pricing" title={<>Transparent <span className="text-gradient-gold">packages</span>.</>} subtitle="Choose a starting point. Every package is customizable." />
@@ -68,5 +71,6 @@ export default function Pricing() {
         </div>
       </div>
     </section>
+    </>
   );
 }
