@@ -42,7 +42,7 @@ export default function Book() {
     tier: presetTier,
     service: presetService,
     date: "",
-    notes: "",
+    notes: params.get("notes") || "",
   });
 
   const handleChange = (key: string, value: string) => {
