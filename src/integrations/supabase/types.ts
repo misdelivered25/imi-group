@@ -155,6 +155,57 @@ export type Database = {
           },
         ]
       }
+      consultation_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          interest: string | null
+          name: string
+          notes: string | null
+          package: string | null
+          phone: string | null
+          preferred_date: string | null
+          service: string | null
+          source: string
+          status: string
+          tier: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          interest?: string | null
+          name: string
+          notes?: string | null
+          package?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          service?: string | null
+          source?: string
+          status?: string
+          tier?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          interest?: string | null
+          name?: string
+          notes?: string | null
+          package?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          service?: string | null
+          source?: string
+          status?: string
+          tier?: string | null
+        }
+        Relationships: []
+      }
       downloads: {
         Row: {
           downloaded_at: string

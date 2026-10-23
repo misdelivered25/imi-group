@@ -13,6 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CTALink } from "@/components/ui-bits/CTAButton";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const interests = [
   "Website / Web app",
@@ -49,8 +51,20 @@ export default function Book() {
     setForm((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [saving, setSaving] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSaving(true);
+    const t = (v: string) => v.trim() || null;
+    const { error } = await supabase.from("consultation_requests").insert({
+      source: form.service === "AI-recommended package" ? "project_advisor" : "booking_form",
+      name: form.name.trim(), email: form.email.trim(), company: t(form.company), phone: t(form.phone),
+      interest: t(form.interest), package: t(form.package), tier: t(form.tier), service: t(form.service),
+      preferred_date: t(form.date), notes: t(form.notes),
+    });
+    setSaving(false);
+    if (error) { toast.error("We couldn't save your request. Please try again or chat on WhatsApp."); return; }
     const query = new URLSearchParams();
     Object.entries(form).forEach(([key, value]) => {
       if (value.trim()) query.set(key, value.trim());
@@ -188,7 +202,7 @@ export default function Book() {
             >
               Skip form & chat now
             </CTALink>
-            <Button type="submit" size="lg" className="bg-gradient-to-r from-primary to-primary-glow w-full sm:w-auto">
+            <Button type="submit" size="lg" disabled={saving} className="bg-gradient-to-r from-primary to-primary-glow w-full sm:w-auto">
               Review & send
               <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
