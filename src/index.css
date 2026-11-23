@@ -5,52 +5,60 @@
 @layer base {
   :root {
     /* IMI Premium Dark Palette */
-    --background: 220 30% 4%;
-    --foreground: 40 30% 96%;
+    --background: 225 6% 13%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 28% 7%;
-    --card-foreground: 40 30% 96%;
+    --card: 220 14% 96%;
+    --card-foreground: 225 6% 13%;
 
-    --popover: 222 30% 6%;
-    --popover-foreground: 40 30% 96%;
+    --popover: 225 6% 13%;
+    --popover-foreground: 0 0% 100%;
 
     /* Royal Blue */
-    --primary: 224 85% 56%;
+    --primary: 217 64% 39%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 95% 65%;
+    --primary-glow: 217 64% 49%;
 
     /* Metallic Gold */
-    --secondary: 42 65% 55%;
-    --secondary-foreground: 222 47% 6%;
-    --gold: 42 78% 60%;
-    --gold-soft: 42 60% 70%;
+    --secondary: 30 89% 55%;
+    --secondary-foreground: 225 6% 13%;
+    --gold: 30 89% 55%;
+    --gold-soft: 30 89% 70%;
 
-    --muted: 222 20% 12%;
-    --muted-foreground: 220 12% 65%;
+    --muted: 225 6% 20%;
+    --muted-foreground: 220 9% 72%;
 
-    --accent: 224 85% 56%;
+    --accent: 217 64% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 22% 14%;
-    --input: 220 22% 12%;
-    --ring: 224 85% 56%;
+    --border: 225 6% 29%;
+    --input: 225 6% 29%;
+    --ring: 217 64% 49%;
 
-    --radius: 0.875rem;
+    --radius: 0.5rem;
+    --invoice-paper: 0 0% 100%;
+    --invoice-ink: 225 6% 13%;
+    --invoice-blue: 217 64% 39%;
+    --invoice-orange: 30 89% 55%;
+    --invoice-success: 145 74% 29%;
+    --invoice-grey: 220 14% 96%;
+    --invoice-border: 220 10% 80%;
+    --invoice-shadow: 0 8px 32px hsl(225 6% 0% / .14);
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse at top, hsl(224 85% 25% / 0.5), transparent 60%), linear-gradient(180deg, hsl(220 30% 4%), hsl(222 35% 6%));
-    --gradient-gold: linear-gradient(135deg, hsl(42 78% 60%), hsl(38 90% 50%));
-    --gradient-blue: linear-gradient(135deg, hsl(224 85% 56%), hsl(220 95% 65%));
-    --gradient-glass: linear-gradient(135deg, hsl(220 30% 12% / 0.6), hsl(220 30% 8% / 0.3));
-    --gradient-border: linear-gradient(135deg, hsl(42 78% 60% / 0.6), hsl(224 85% 56% / 0.6));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-soft)));
+    --gradient-blue: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--muted) / .9), hsl(var(--background) / .95));
+    --gradient-border: linear-gradient(135deg, hsl(var(--gold) / .6), hsl(var(--primary) / .6));
 
     /* Shadows / Glows */
-    --shadow-gold: 0 0 40px hsl(42 78% 60% / 0.25);
-    --shadow-blue: 0 0 60px hsl(224 85% 56% / 0.35);
-    --shadow-elegant: 0 25px 80px -20px hsl(220 80% 5% / 0.8);
+    --shadow-gold: 0 0 40px hsl(var(--gold) / .25);
+    --shadow-blue: 0 0 60px hsl(var(--primary) / .35);
+    --shadow-elegant: 0 25px 80px -20px hsl(225 6% 0% / .8);
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -63,15 +71,13 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: "cv11","ss01","ss03";
-    letter-spacing: -0.005em;
-    background-image:
-      radial-gradient(circle at 20% 10%, hsl(224 85% 30% / 0.18), transparent 40%),
-      radial-gradient(circle at 85% 90%, hsl(42 78% 50% / 0.08), transparent 40%);
+    letter-spacing: 0;
+    background-image: none;
     background-attachment: fixed;
   }
   h1, h2, h3, h4, .font-display {
     font-family: 'Sora', 'Space Grotesk', system-ui, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
     font-weight: 700;
     line-height: 1.08;
   }
@@ -85,7 +91,7 @@
     background: var(--gradient-glass);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border: 1px solid hsl(220 30% 20% / 0.5);
+    border: 1px solid hsl(var(--border) / .5);
   }
   .glass-gold {
     background: var(--gradient-glass);
@@ -219,8 +225,8 @@
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px hsl(var(--primary) / 0.7), 0 0 30px hsl(var(--gold) / 0.25); }
 
 .btn-gold {
-  background: linear-gradient(135deg, hsl(var(--gold)), hsl(38 90% 50%));
-  color: hsl(222 47% 6%);
+  background: var(--gradient-gold);
+  color: hsl(var(--secondary-foreground));
   box-shadow: 0 8px 30px -8px hsl(var(--gold) / 0.6), inset 0 1px 0 hsl(0 0% 100% / 0.3);
 }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px hsl(var(--gold) / 0.7); }
@@ -278,3 +284,30 @@
   transition: all 0.35s ease;
 }
 .card-click:hover .reveal-panel { opacity: 1; transform: translateY(0); }
+
+.workspace { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: 80vh; }
+.workspace-sidebar { padding: 24px 16px; border-right: 1px solid hsl(var(--border)); }
+.workspace-content { padding: 32px; min-width: 0; }
+.workspace-surface { background: hsl(var(--invoice-paper)); color: hsl(var(--invoice-ink)); border: 1px solid hsl(var(--invoice-border)); border-radius: 6px; padding: 20px; }
+.workspace-surface input, .workspace-surface textarea, .workspace-surface select { background: hsl(var(--invoice-paper)); color: hsl(var(--invoice-ink)); border-color: hsl(var(--invoice-border)); }
+.workspace-surface label { display: block; font-size: 12px; margin-bottom: 5px; }
+.workspace-surface h2 { font-size: 17px; margin-bottom: 16px; }
+.workspace-surface .text-muted-foreground { color: hsl(var(--invoice-ink) / .65); }
+.workspace-select { border: 1px solid hsl(var(--border)); border-radius: 6px; min-height: 40px; padding: 8px 10px; background: hsl(var(--background)); color: hsl(var(--foreground)); max-width: 100%; }
+.invoice-editor-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px; align-items: start; }
+.invoice-paper { background: hsl(var(--invoice-paper)); color: hsl(var(--invoice-ink)); padding: 7.5%; width: 100%; min-height: 100%; font-family: Arial, sans-serif; font-size: 9px; line-height: 1.3; box-shadow: var(--invoice-shadow); overflow-wrap: anywhere; }
+.invoice-paper h2 { font-family: Arial, sans-serif; font-size: 12px; margin: 0; line-height: 1.1; }
+.invoice-paper h3 { font-family: Arial, sans-serif; color: hsl(var(--invoice-blue)); font-size: 11px; margin: 20px 0 6px; }
+.invoice-brand { display: flex; align-items: center; gap: 5%; padding-bottom: 12px; border-bottom: 2px solid hsl(var(--invoice-blue)); }
+.invoice-brand img { width: 22%; aspect-ratio: 1; object-fit: contain; }
+.invoice-brand strong { display: block; }.invoice-brand .invoice-orange { margin-top: 10px; }
+.invoice-orange { color: hsl(var(--invoice-orange)); }.invoice-blue { color: hsl(var(--invoice-blue)); }.invoice-green { color: hsl(var(--invoice-success)); }
+.invoice-title { font-size: 34px; font-weight: 700; margin-top: 14px; line-height: 1; }.invoice-payment-label { color: hsl(var(--invoice-blue)); font-weight: 700; letter-spacing: 2px; margin-bottom: 24px; }
+.invoice-info { display: grid; grid-template-columns: 37% 28% 35%; margin-bottom: 20px; }.invoice-info section { padding: 0 10px; white-space: pre-line; min-width: 0; }.invoice-info section:first-child { padding-left: 2px; }.invoice-info section + section { border-left: 1px solid hsl(var(--invoice-border)); }.invoice-info strong, .invoice-info b, .invoice-info em { display: block; }.invoice-space { margin-top: 14px; }
+.invoice-items { width: 100%; border-collapse: collapse; text-align: left; table-layout: fixed; }.invoice-items th { background: hsl(var(--invoice-blue)); color: hsl(var(--invoice-paper)); padding: 10px 8px; font-size: 9px; }.invoice-items th:first-child { width: 48%; }.invoice-items th:nth-child(2) { width: 10%; }.invoice-items td { padding: 10px 8px; background: hsl(var(--invoice-grey)); vertical-align: top; }.invoice-items td div { color: hsl(var(--invoice-ink) / .65); margin-top: 3px; }
+.invoice-summary { width: 47%; margin: 18px 0 18px auto; }.invoice-summary > div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 10px; }.invoice-summary .invoice-total { background: hsl(var(--invoice-blue)); color: hsl(var(--invoice-paper)); font-size: 14px; }
+.invoice-confirmation { display: grid; grid-template-columns: 48% 52%; background: hsl(var(--invoice-grey)); border: 1px solid hsl(var(--invoice-border)); }.invoice-confirmation section { padding: 14px 12px; }.invoice-confirmation section:first-child { border: 1px solid hsl(var(--invoice-orange)); }.invoice-confirmation strong, .invoice-confirmation b { display: block; }.invoice-confirmation div b { display: inline; }.invoice-confirmation .invoice-space { margin-top: 12px; }
+.invoice-notes { white-space: pre-line; }.invoice-footer { border-top: 1.5px solid hsl(var(--invoice-orange)); margin-top: 20px; padding-top: 12px; }.invoice-footer b, .invoice-footer strong { display: block; }.invoice-footer b { color: hsl(var(--invoice-blue)); }
+@media (max-width: 1200px) { .invoice-editor-grid { grid-template-columns: minmax(0,1fr); }.invoice-preview-wrap { max-width: 740px; } }
+@media (max-width: 767px) { .workspace { grid-template-columns: minmax(0,1fr); }.workspace-sidebar { padding: 12px; border-right: none; border-bottom: 1px solid hsl(var(--border)); }.workspace-sidebar nav { display: flex; flex-wrap: wrap; }.workspace-sidebar nav a { padding: 8px; font-size: 12px; }.workspace-content { padding: 24px 12px; }.invoice-paper { font-size: 7px; }.invoice-paper h2 { font-size: 10px; }.invoice-brand { gap: 12px; }.invoice-title { font-size: 28px; }.invoice-items th { font-size: 7px; padding: 8px 4px; }.invoice-items td { padding: 8px 4px; }.invoice-summary { width: 60%; }.invoice-info section { padding: 0 6px; }.invoice-summary .invoice-total { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

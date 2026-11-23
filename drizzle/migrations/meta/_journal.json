@@ -8,6 +8,20 @@
       "when": 1792766873108,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795395961019,
+      "tag": "0001_invoice_workspace_roles",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795395995226,
+      "tag": "0002_invoice_workspace",
+      "breakpoints": true
     }
   ]
 }

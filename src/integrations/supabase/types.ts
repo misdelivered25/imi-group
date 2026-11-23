@@ -14,6 +14,21 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_access: {
+        Row: {
+          active: boolean
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          user_id?: string
+        }
+        Relationships: []
+      }
       albums: {
         Row: {
           cover_image_url: string | null
@@ -298,6 +313,123 @@ export type Database = {
           },
         ]
       }
+      invoice_businesses: {
+        Row: {
+          created_at: string
+          data: Json
+          id: string
+          name: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data?: Json
+          id?: string
+          name: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json
+          id?: string
+          name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invoice_customers: {
+        Row: {
+          created_at: string
+          data: Json
+          id: string
+          name: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data?: Json
+          id?: string
+          name: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json
+          id?: string
+          name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invoice_sequences: {
+        Row: {
+          last_value: number
+          prefix: string
+          user_id: string
+        }
+        Insert: {
+          last_value?: number
+          prefix: string
+          user_id: string
+        }
+        Update: {
+          last_value?: number
+          prefix?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invoices: {
+        Row: {
+          amount_paid: number
+          created_at: string
+          currency: string
+          customer_name: string
+          data: Json
+          due_date: string | null
+          id: string
+          issue_date: string
+          number: string
+          prefix: string
+          status: string
+          total: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount_paid?: number
+          created_at?: string
+          currency?: string
+          customer_name?: string
+          data?: Json
+          due_date?: string | null
+          id?: string
+          issue_date?: string
+          number?: string
+          prefix?: string
+          status?: string
+          total?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          amount_paid?: number
+          created_at?: string
+          currency?: string
+          customer_name?: string
+          data?: Json
+          due_date?: string | null
+          id?: string
+          issue_date?: string
+          number?: string
+          prefix?: string
+          status?: string
+          total?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       media_items: {
         Row: {
           album_id: string | null
@@ -470,6 +602,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      account_is_active: { Args: { _user_id: string }; Returns: boolean }
       client_preview_can_access: {
         Args: { p_media_item_id: string; p_token: string }
         Returns: boolean
@@ -493,7 +626,12 @@ export type Database = {
       }
     }
     Enums: {
-      app_role: "admin" | "editor" | "client_viewer"
+      app_role:
+        | "admin"
+        | "editor"
+        | "client_viewer"
+        | "super_admin"
+        | "standard_user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -621,7 +759,13 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "editor", "client_viewer"],
+      app_role: [
+        "admin",
+        "editor",
+        "client_viewer",
+        "super_admin",
+        "standard_user",
+      ],
     },
   },
 } as const
