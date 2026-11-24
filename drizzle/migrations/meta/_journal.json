@@ -22,6 +22,13 @@
       "when": 1795395995226,
       "tag": "0002_invoice_workspace",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1795530408019,
+      "tag": "0003_restrict_comments_and_gallery_files",
+      "breakpoints": true
     }
   ]
 }
