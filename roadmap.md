@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Add PDF-template invoice editor, live preview, PDF export, saved history, customers, and business profiles.
-- [ ] Add secure administrator user management while preserving existing roles.
+- [x] Add PDF-template invoice editor, live preview, PDF export, saved history, customers, and business profiles.
+- [x] Add secure administrator user management while preserving existing roles.
 - [ ] Apply the supplied corporate colour palette and verify signed-in invoice workflows.
 - [ ] Enable invoice email delivery (requires a verified sender domain).
 

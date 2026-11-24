@@ -69,6 +69,8 @@ export default function Admin() {
             <p className="text-sm text-muted-foreground">{panel === "Overview" ? "Here's what's happening across IMI this week." : `Manage and review ${panel.toLowerCase()}.`}</p>
           </div>
           <div className="hidden md:flex gap-2">
+            <CTALink to="/admin/invoices" variant="primary" size="sm" iconLeft={<FileText className="h-4 w-4" />}>Invoices</CTALink>
+            <CTALink to="/admin/users" variant="outline" size="sm" iconLeft={<Users className="h-4 w-4" />}>Users</CTALink>
             <CTALink to="/payments" variant="outline" size="sm" iconLeft={<CreditCard className="h-4 w-4" />}>Payments</CTALink>
             <CTALink href="https://wa.me/263785693657" target="_blank" variant="primary" size="sm" iconLeft={<Calendar className="h-4 w-4" />}>New booking</CTALink>
           </div>

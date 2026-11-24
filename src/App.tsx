@@ -29,6 +29,10 @@ import AdminGallery from "./pages/AdminGallery.tsx";
 import ClientPreview from "./pages/ClientPreview.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Invoices from "./pages/workspace/Invoices.tsx";
+import InvoiceEditor from "./pages/workspace/InvoiceEditor.tsx";
+import Contacts from "./pages/workspace/Contacts.tsx";
+import Users from "./pages/workspace/Users.tsx";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +69,12 @@ export default function App() {
               <Route path="/media-library" element={<MediaLibrary />} />
               <Route path="/upload" element={<Upload />} />
               <Route path="/admin/gallery" element={<AdminGallery />} />
+              <Route path="/admin/invoices" element={<Invoices />} />
+              <Route path="/admin/invoices/new" element={<InvoiceEditor />} />
+              <Route path="/admin/invoices/:id" element={<InvoiceEditor />} />
+              <Route path="/admin/customers" element={<Contacts kind="invoice_customers" />} />
+              <Route path="/admin/businesses" element={<Contacts kind="invoice_businesses" />} />
+              <Route path="/admin/users" element={<Users />} />
               <Route path="/client-preview/:token" element={<ClientPreview />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/book-consultation" element={<Book />} />
